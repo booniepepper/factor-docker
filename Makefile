@@ -7,7 +7,7 @@ build:
 
 .PHONY: test
 test: build
-	docker run $(tag)
+	docker run $(tag) factor -e='1 2 3'
 
 .PHONY: release
 release: build test
