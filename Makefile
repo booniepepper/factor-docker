@@ -1,14 +1,17 @@
 arch := $(shell uname -m)
-tag = booniepepper/factor:latest
+repo = booniepepper/factor
+tag = linux-x86-64-0.100
 
 .PHONY: build
 build:
-	docker buildx build . -t $(tag) >build.log
+	docker buildx build . -t $(repo):latest >build.log
+	docker buildx build . -t $(repo):$(tag) >>build.log
 
 .PHONY: test
 test: build
-	docker run $(tag) factor -e='1 2 3'
+	docker run $(repo):latest factor -e='1 2 3'
 
 .PHONY: release
 release: build test
-	docker push $(tag)
+	docker push $(repo):latest
+	docker push $(repo):$(tag)
