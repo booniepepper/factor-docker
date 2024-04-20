@@ -1,5 +1,5 @@
 arch := $(shell uname -m)
-tag = booniepepper/factor:latest
+tag = booniepepper/factor:linux-x86-64-0.99
 
 .PHONY: build
 build:

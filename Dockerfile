@@ -2,10 +2,9 @@ FROM ubuntu as build
 
 RUN apt update
 RUN apt install wget -y
-ARG TIP=2024-04-17-03-30
-ARG TARBALL="factor-linux-x86-64-${TIP}.tar.gz"
+ARG TARBALL="factor-linux-x86-64-0.99.tar.gz"
 WORKDIR "/opt"
-RUN wget https://downloads.factorcode.org/linux-x86-64/${TARBALL}
+RUN wget https://downloads.factorcode.org/releases/0.99/${TARBALL}
 RUN tar -xzvf ${TARBALL}
 
 FROM ubuntu as run
