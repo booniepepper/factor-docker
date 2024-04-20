@@ -1,2 +1,4 @@
 Builds of the [Factor programming language](https://factorcode.org)
-for Docker hub.
+packaged up for Docker hub.
+
+- https://hub.docker.com/r/booniepepper/factor
